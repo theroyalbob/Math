@@ -1,0 +1,113 @@
+//  main.cpp
+//  Math
+//  Created by Andrew Stewart on 11/24/15.
+//  Copyright © 2015 Andrew Stewart. All rights reserved.
+#include <iostream>
+#include <math.h>
+using namespace std;
+int circumfrence()
+{
+    float r;
+    float c;
+    cout<< "What is the Radius?"<<'\n';
+    cin>> r;
+    cout << "The Radius is: "<< r<< '\n';
+    c=2*M_PI*r;
+    cout<< "The circumfrence is: "<< c<<'\n';
+    return 0;
+}
+int area_circle()
+{
+    float r;
+    float a;
+    cout<< "What is the radius?"<<'\n';
+    cin>> r;
+    cout << "The radius is: "<<r<<'\n';
+    r=pow(r, 2);
+    a=M_PI*r;
+    cout<< "The area is: "<<a<<'\n';
+    return 0;
+}
+void area_triangle()
+{
+    float b, h, a;
+    cout << "What is the base of the triangle?"<<'\n';
+    cin>>b;
+    cout<< "The base is: "<<b<<'\n'<<"What is the height? " << '\n';
+    cin>>h;
+    cout<<"The height is: "<<'\n'<<h<<'\n';
+    a= .5 * b * h;
+    cout<<"The area is: "<<a<<'\n';
+    
+}
+void perimeter()
+{
+    float a,b,c,p;
+    cout<< "What is side 1? "<<'\n';
+    cin>> a;
+    cout<<"Side 1 is: "<<a<<'\n'<< "What is side 2? "<<'\n';
+    cin>>b;
+    cout<<"Side 2 is: "<<b<<'\n'<< "What is side 3? "<< '\n';
+    cin>>c;
+    p=a+b+c;
+    cout<<"Side 3 is: "<<c<<'\n'<<"The perimeter is: "<<p<<'\n';
+    
+}
+void volume_sphere()
+{
+    float v, r;
+    cout<<"What is the Radius of the sphere?"<< '\n';
+    cin>>r;
+    
+    cout<<"the radius is: "<<r<<'\n';
+    r=pow(r, 3);
+    v= 1.33333*M_PI*r;
+    cout <<"The Volume is: "<<v<<'\n';
+}
+void volume_cylander()
+{
+    float v, r, h;
+    cout<< "What is the radius of the cylander? "<<'\n';
+    cin>>r;
+    cout<<"The radius is: "<<r<<'\n'<<"What is the height of the cylander? "<<'\n';
+    cin>>h;
+    cout<<"The Height is: "<<h<<'\n';
+    r=pow(r, 2);
+    v=r*h*M_PI;
+    cout<< "The volume is: "<<v<<'\n';
+}
+int main()
+{
+    cout<<"This program can calculate: volume of a sphere, or cylander, area of a triangle, or circle, circumfrence of a circle, or perimeter of a triangle."<<'\n';
+    char a, b;
+    cout<<"Calculate volume, area, perimeter, or circumfrence? Enter v for volume, a for area, p for perimeter, and c for circumfrence"<<'\n';
+    cin>>a;
+    if (a=='a') {
+        cout<<'\n'<<"Area of triangle or circle? Enter t for triangle and c for circle "<<'\n';
+        cin>>b;
+        if ( b=='c'){
+            area_circle();
+           }
+        if (b=='t'){
+            area_triangle();
+        }
+        
+    }
+    if (a=='c'){
+        circumfrence();
+    }
+    if (a=='p'){
+            perimeter();
+        }
+    if (a=='v'){
+        cout<<"Volume of a sphere or cylander? Enter s for sphere and c for cylander"<<'\n';
+        cin>>b;
+        if (b=='s') {
+            volume_sphere();
+        }
+        if (b=='c'){
+            volume_cylander();
+        }
+        }
+    return 0;
+}
